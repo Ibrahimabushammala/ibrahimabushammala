@@ -1,0 +1,670 @@
+!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحتي الشخصية | إبراهيم أبو شمالة</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Tahoma", Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background: #0f172a;
+            color: white;
+            line-height: 1.8;
+            transition: 0.4s;
+        }
+        /* =========================
+           شريط التنقل
+        ========================= */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 15px;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: #38bdf8;
+        }
+        /* =========================
+           الصفحة الرئيسية
+        ========================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+            background:
+                radial-gradient(
+                    circle at top right,
+                    #164e63,
+                    transparent 40%
+                ),
+                radial-gradient(
+                    circle at bottom left,
+                    #312e81,
+                    transparent 40%
+                ),
+                #0f172a;
+        }
+        .hero-content {
+            max-width: 850px;
+        }
+        /* صورة الشخصية */
+        .profile-img {
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #38bdf8;
+            margin-bottom: 20px;
+            box-shadow:
+                0 0 25px rgba(56,189,248,0.5),
+                0 0 60px rgba(56,189,248,0.2);
+            transition: 0.4s;
+            animation: floating 3s ease-in-out infinite;
+        }
+        .profile-img:hover {
+            transform: scale(1.07);
+        }
+        /* حركة الصورة */
+        @keyframes floating {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        .hero h1 {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+        .hero h1 span {
+            color: #38bdf8;
+        }
+        .hero p {
+            color: #cbd5e1;
+            font-size: 19px;
+            margin-bottom: 25px;
+        }
+        /* =========================
+           الأزرار
+        ========================= */
+        .btn {
+            display: inline-block;
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        .btn:hover {
+            transform: translateY(-4px);
+            background: #7dd3fc;
+            box-shadow: 0 10px 25px rgba(56,189,248,0.3);
+        }
+        /* =========================
+           الأقسام
+        ========================= */
+        section {
+            padding: 90px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+        .section-title h2 {
+            font-size: 32px;
+            color: #38bdf8;
+        }
+        .section-title p {
+            color: #94a3b8;
+        }
+        /* =========================
+           عني
+        ========================= */
+        .about {
+            background: #111827;
+        }
+        .about-box {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .about-box:hover {
+            transform: translateY(-5px);
+        }
+        .about-box p {
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+        /* =========================
+           المهارات
+        ========================= */
+        .skills {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+            gap: 20px;
+        }
+        .skill {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 18px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+        .skill:hover {
+            transform: translateY(-7px);
+            background: #263449;
+            border-color: #38bdf8;
+        }
+        .skill h3 {
+            color: #38bdf8;
+            margin-bottom: 8px;
+            font-size: 21px;
+        }
+        .skill p {
+            color: #cbd5e1;
+        }
+        /* =========================
+           معلومات شخصية
+        ========================= */
+        .info {
+            display: grid;
+            grid-template-columns:
+                repeat(2, 1fr);
+            gap: 20px;
+        }
+        .info-box {
+            background: #1e293b;
+            padding: 22px;
+            border-radius: 15px;
+            transition: 0.3s;
+            border-right: 4px solid #38bdf8;
+        }
+        .info-box:hover {
+            transform: translateX(-5px);
+        }
+        .info-box strong {
+            color: #38bdf8;
+        }
+        /* =========================
+           التواصل
+        ========================= */
+        .contact {
+            background: #111827;
+            text-align: center;
+        }
+        .social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        .social a {
+            text-decoration: none;
+            color: white;
+            background: #1e293b;
+            padding: 10px 22px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+        .social a:hover {
+            background: #38bdf8;
+            color: #0f172a;
+            transform: translateY(-3px);
+        }
+        /* =========================
+           الفوتر
+        ========================= */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #020617;
+            color: #94a3b8;
+        }
+        /* =========================
+           زر الوضع
+        ========================= */
+        #themeBtn {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            width: 48px;
+            height: 48px;
+            border: none;
+            border-radius: 50%;
+            background: #38bdf8;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 2000;
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+        #themeBtn:hover {
+            transform: scale(1.1);
+        }
+        /* =========================
+           الوضع الفاتح
+        ========================= */
+        body.light {
+            background: #f1f5f9;
+            color: #0f172a;
+        }
+        body.light nav {
+            background: rgba(255,255,255,0.9);
+        }
+        body.light nav a {
+            color: #0f172a;
+        }
+        body.light nav a:hover {
+            color: #0284c7;
+        }
+        body.light .hero {
+            background:
+                radial-gradient(
+                    circle at top right,
+                    #bae6fd,
+                    transparent 40%
+                ),
+                radial-gradient(
+                    circle at bottom left,
+                    #c7d2fe,
+                    transparent 40%
+                ),
+                #f1f5f9;
+        }
+        body.light .hero p {
+            color: #475569;
+        }
+        body.light .about,
+        body.light .contact {
+            background: #e2e8f0;
+        }
+        body.light .skill,
+        body.light .info-box,
+        body.light .about-box,
+        body.light .social a {
+            background: white;
+            color: #0f172a;
+        }
+        body.light .skill p,
+        body.light .about-box p,
+        body.light .info-box,
+        body.light .social a {
+            color: #475569;
+        }
+        body.light footer {
+            background: #cbd5e1;
+        }
+        /* =========================
+           الهاتف
+        ========================= */
+        @media (max-width: 768px) {
+            nav {
+                gap: 10px;
+                padding: 12px 5px;
+                overflow-x: auto;
+                justify-content: flex-start;
+            }
+            nav a {
+                font-size: 12px;
+                white-space: nowrap;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+            .skills {
+                grid-template-columns: 1fr;
+            }
+            .info {
+                grid-template-columns: 1fr;
+            }
+            section {
+                padding: 70px 15px;
+            }
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- =========================
+         شريط التنقل
+    ========================= -->
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#about">عني</a>
+        <a href="#skills">مهاراتي</a>
+        <a href="#info">معلوماتي</a>
+        <a href="#contact">تواصل معي</a>
+    </nav>
+    <!-- =========================
+         الصفحة الرئيسية
+    ========================= -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <!--
+                ضع صورتك هنا
+                اسم الصورة يجب أن يكون:
+                ibrahim.jpg
+            -->
+            <img
+                src="ibrahim.jpg"
+                class="profile-img"
+                alt="صورة إبراهيم أبو شمالة"
+            >
+            <h1>
+                أنا
+                <span>
+                    إبراهيم أبو شمالة
+                </span>
+            </h1>
+            <p>
+                طالب ومهتم بالتكنولوجيا
+                والتصميم وتطوير المواقع
+            </p>
+            <a
+                href="#about"
+                class="btn"
+            >
+                تعرّف عليّ
+            </a>
+        </div>
+    </section>
+    <!-- =========================
+         عني
+    ========================= -->
+    <section
+        class="about"
+        id="about"
+    >
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    من أنا؟
+                </h2>
+                <p>
+                    نبذة بسيطة عني
+                </p>
+            </div>
+            <div class="about-box">
+                <p>
+                    أنا إبراهيم أبو شمالة،
+                    شخص شغوف بالتكنولوجيا
+                    والتصميم وتعلم البرمجة.
+                    أحب تطوير نفسي باستمرار
+                    واكتساب مهارات جديدة،
+                    وأسعى إلى بناء مستقبل
+                    مميز من خلال العلم
+                    والعمل والإبداع.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- =========================
+         المهارات
+    ========================= -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    مهاراتي
+                </h2>
+                <p>
+                    بعض المهارات والاهتمامات
+                </p>
+            </div>
+            <div class="skills">
+                <div class="skill">
+                    <h3>
+                        HTML
+                    </h3>
+                    <p>
+                        إنشاء وتصميم صفحات الويب.
+                    </p>
+                </div>
+                <div class="skill">
+                    <h3>
+                        CSS
+                    </h3>
+                    <p>
+                        تنسيق وتصميم المواقع
+                        بشكل عصري.
+                    </p>
+                </div>
+                <div class="skill">
+                    <h3>
+                        JavaScript
+                    </h3>
+                    <p>
+                        إضافة التفاعل والحركة
+                        للمواقع.
+                    </p>
+                </div>
+                <div class="skill">
+                    <h3>
+                        التصميم
+                    </h3>
+                    <p>
+                        تصميم الصور والفيديوهات
+                        والمحتوى.
+                    </p>
+                </div>
+                <div class="skill">
+                    <h3>
+                        التكنولوجيا
+                    </h3>
+                    <p>
+                        اهتمام بالتقنية
+                        والأجهزة الحديثة.
+                    </p>
+                </div>
+                <div class="skill">
+                    <h3>
+                        التعلم
+                    </h3>
+                    <p>
+                        التعلم المستمر
+                        وتطوير المهارات.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =========================
+         معلوماتي
+    ========================= -->
+    <section id="info">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    معلومات عني
+                </h2>
+                <p>
+                    بيانات مختصرة
+                </p>
+            </div>
+            <div class="info">
+                <div class="info-box">
+                    <strong>
+                        الاسم:
+                    </strong>
+                    إبراهيم أبو شمالة
+                </div>
+                <div class="info-box">
+                    <strong>
+                        المجال:
+                    </strong>
+                    التكنولوجيا والبرمجة
+                </div>
+                <div class="info-box">
+                    <strong>
+                        اللغة:
+                    </strong>
+                    العربية
+                </div>
+                <div class="info-box">
+                    <strong>
+                        الهوايات:
+                    </strong>
+                    التصميم، التصوير،
+                    التكنولوجيا
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =========================
+         التواصل
+    ========================= -->
+    <section
+        class="contact"
+        id="contact"
+    >
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    تواصل معي
+                </h2>
+                <p>
+                    يمكنك متابعتي عبر مواقع التواصل
+                </p>
+            </div>
+            <div class="social">
+                <!-- ضع رابط حساب Instagram مكان # -->
+                <a
+                    href="#"
+                    target="_blank"
+                >
+                    Instagram
+                </a>
+                <!-- ضع رابط حساب Facebook مكان # -->
+                <a
+                    href="#"
+                    target="_blank"
+                >
+                    Facebook
+                </a>
+                <!-- ضع رابط حساب TikTok مكان # -->
+                <a
+                    href="#"
+                    target="_blank"
+                >
+                    TikTok
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- =========================
+         الفوتر
+    ========================= -->
+    <footer>
+        <p>
+            ©
+            <span id="year"></span>
+            إبراهيم أبو شمالة
+            — جميع الحقوق محفوظة
+        </p>
+    </footer>
+    <!-- =========================
+         زر الوضع الليلي
+    ========================= -->
+    <button id="themeBtn">
+        ☀️
+    </button>
+    <!-- =========================
+         JavaScript
+    ========================= -->
+    <script>
+        /* السنة الحالية */
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+        /* زر تغيير الوضع */
+        const themeBtn =
+            document.getElementById("themeBtn");
+        themeBtn.addEventListener(
+            "click",
+            function () {
+                document.body.classList.toggle(
+                    "light"
+                );
+                if (
+                    document.body.classList.contains(
+                        "light"
+                    )
+                ) {
+                    themeBtn.textContent = "🌙";
+                }
+                else {
+                    themeBtn.textContent = "☀️";
+                }
+            }
+        );
+        /* التنقل السلس */
+        document
+            .querySelectorAll("nav a")
+            .forEach(function(link) {
+                link.addEventListener(
+                    "click",
+                    function(event) {
+                        event.preventDefault();
+                        const target =
+                            document.querySelector(
+                                this.getAttribute("href")
+                            );
+                        target.scrollIntoView({
+                            behavior: "smooth"
+                        });
+                    }
+                );
+            });
+    </script>
+</body>
+</html>
