@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@
             transition: 0.4s;
         }
         /* =========================
-           شريط التنقل
+            شريط التنقل
         ========================= */
         nav {
             position: fixed;
@@ -45,7 +45,7 @@
             color: #38bdf8;
         }
         /* =========================
-           الصفحة الرئيسية
+            الصفحة الرئيسية
         ========================= */
         .hero {
             min-height: 100vh;
@@ -112,7 +112,7 @@
             margin-bottom: 25px;
         }
         /* =========================
-           الأزرار
+            الأزرار
         ========================= */
         .btn {
             display: inline-block;
@@ -132,7 +132,7 @@
             box-shadow: 0 10px 25px rgba(56,189,248,0.3);
         }
         /* =========================
-           الأقسام
+            الأقسام
         ========================= */
         section {
             padding: 90px 20px;
@@ -153,7 +153,7 @@
             color: #94a3b8;
         }
         /* =========================
-           عني
+            عني
         ========================= */
         .about {
             background: #111827;
@@ -174,12 +174,11 @@
             font-size: 17px;
         }
         /* =========================
-           المهارات
+            المهارات
         ========================= */
         .skills {
             display: grid;
-            grid-template-columns:
-                repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
         .skill {
@@ -204,12 +203,11 @@
             color: #cbd5e1;
         }
         /* =========================
-           معلومات شخصية
+            معلومات شخصية
         ========================= */
         .info {
             display: grid;
-            grid-template-columns:
-                repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
         .info-box {
@@ -226,7 +224,7 @@
             color: #38bdf8;
         }
         /* =========================
-           التواصل
+            التواصل
         ========================= */
         .contact {
             background: #111827;
@@ -253,7 +251,7 @@
             transform: translateY(-3px);
         }
         /* =========================
-           الفوتر
+            الفوتر
         ========================= */
         footer {
             text-align: center;
@@ -262,7 +260,7 @@
             color: #94a3b8;
         }
         /* =========================
-           زر الوضع
+            زر الوضع
         ========================= */
         #themeBtn {
             position: fixed;
@@ -276,15 +274,14 @@
             cursor: pointer;
             font-size: 20px;
             z-index: 2000;
-            box-shadow:
-                0 5px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             transition: 0.3s;
         }
         #themeBtn:hover {
             transform: scale(1.1);
         }
         /* =========================
-           الوضع الفاتح
+            الوضع الفاتح
         ========================= */
         body.light {
             background: #f1f5f9;
@@ -329,7 +326,6 @@
         }
         body.light .skill p,
         body.light .about-box p,
-        body.light .info-box,
         body.light .social a {
             color: #475569;
         }
@@ -337,7 +333,7 @@
             background: #cbd5e1;
         }
         /* =========================
-           الهاتف
+            الهاتف
         ========================= */
         @media (max-width: 768px) {
             nav {
@@ -376,9 +372,7 @@
     </style>
 </head>
 <body>
-    <!-- =========================
-         شريط التنقل
-    ========================= -->
+    <!-- شريط التنقل -->
     <nav>
         <a href="#home">الرئيسية</a>
         <a href="#about">عني</a>
@@ -386,286 +380,146 @@
         <a href="#info">معلوماتي</a>
         <a href="#contact">تواصل معي</a>
     </nav>
-    <!-- =========================
-         الصفحة الرئيسية
-    ========================= -->
+
+    <!-- الصفحة الرئيسية -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <!--
-                ضع صورتك هنا
-                اسم الصورة يجب أن يكون:
-                ibrahim.jpg
-            -->
-            <img
-                src="IMG_2291.JPG
-"
-                class="profile-img"
-                alt="صورة إبراهيم أبو شمالة"
-            >
-            <h1>
-                أنا
-                <span>
-                    إبراهيم أبو شمالة
-                </span>
-            </h1>
-            <p>
-                طالب ومهتم بالتكنولوجيا
-                والتصميم وتطوير المواقع
-            </p>
-            <a
-                href="#about"
-                class="btn"
-            >
-                تعرّف عليّ
-            </a>
+            <img src="IMG_2291.JPG" class="profile-img" alt="صورة إبراهيم أبو شمالة">
+            <h1>أنا <span>إبراهيم أبو شمالة</span></h1>
+            <p>طالب ومهتم بالتكنولوجيا والتصميم وتطوير المواقع</p>
+            <a href="#about" class="btn">تعرّف عليّ</a>
         </div>
     </section>
-    <!-- =========================
-         عني
-    ========================= -->
-    <section
-        class="about"
-        id="about"
-    >
+
+    <!-- عني -->
+    <section class="about" id="about">
         <div class="container">
             <div class="section-title">
-                <h2>
-                    من أنا؟
-                </h2>
-                <p>
-                    نبذة بسيطة عني
-                </p>
+                <h2>من أنا؟</h2>
+                <p>نبذة بسيطة عني</p>
             </div>
             <div class="about-box">
                 <p>
-                    أنا إبراهيم أبو شمالة،
-                    شخص شغوف بالتكنولوجيا
-                    والتصميم وتعلم البرمجة.
-                    أحب تطوير نفسي باستمرار
-                    واكتساب مهارات جديدة،
-                    وأسعى إلى بناء مستقبل
-                    مميز من خلال العلم
-                    والعمل والإبداع.
+                    أنا إبراهيم أبو شمالة، شخص شغوف بالتكنولوجيا والتصميم وتعلم البرمجة. أحب تطوير نفسي باستمرار واكتساب مهارات جديدة، وأسعى إلى بناء مستقبل مميز من خلال العلم والعمل والإبداع.
                 </p>
             </div>
         </div>
     </section>
-    <!-- =========================
-         المهارات
-    ========================= -->
+
+    <!-- المهارات -->
     <section id="skills">
         <div class="container">
             <div class="section-title">
-                <h2>
-                    مهاراتي
-                </h2>
-                <p>
-                    بعض المهارات والاهتمامات
-                </p>
+                <h2>مهاراتي</h2>
+                <p>بعض المهارات والاهتمامات</p>
             </div>
             <div class="skills">
                 <div class="skill">
-                    <h3>
-                        HTML
-                    </h3>
-                    <p>
-                        إنشاء وتصميم صفحات الويب.
-                    </p>
+                    <h3>HTML</h3>
+                    <p>إنشاء وتصميم صفحات الويب.</p>
                 </div>
                 <div class="skill">
-                    <h3>
-                        CSS
-                    </h3>
-                    <p>
-                        تنسيق وتصميم المواقع
-                        بشكل عصري.
-                    </p>
+                    <h3>CSS</h3>
+                    <p>تنسيق وتصميم المواقع بشكل عصري.</p>
                 </div>
                 <div class="skill">
-                    <h3>
-                        JavaScript
-                    </h3>
-                    <p>
-                        إضافة التفاعل والحركة
-                        للمواقع.
-                    </p>
+                    <h3>JavaScript</h3>
+                    <p>إضافة التفاعل والحركة للمواقع.</p>
                 </div>
                 <div class="skill">
-                    <h3>
-                        التصميم
-                    </h3>
-                    <p>
-                        تصميم الصور والفيديوهات
-                        والمحتوى.
-                    </p>
+                    <h3>التصميم</h3>
+                    <p>تصميم الصور والفيديوهات والمحتوى.</p>
                 </div>
                 <div class="skill">
-                    <h3>
-                        التكنولوجيا
-                    </h3>
-                    <p>
-                        اهتمام بالتقنية
-                        والأجهزة الحديثة.
-                    </p>
+                    <h3>التكنولوجيا</h3>
+                    <p>اهتمام بالتقنية والأجهزة الحديثة.</p>
                 </div>
                 <div class="skill">
-                    <h3>
-                        التعلم
-                    </h3>
-                    <p>
-                        التعلم المستمر
-                        وتطوير المهارات.
-                    </p>
+                    <h3>التعلم</h3>
+                    <p>التعلم المستمر وتطوير المهارات.</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- =========================
-         معلوماتي
-    ========================= -->
+
+    <!-- معلوماتي -->
     <section id="info">
         <div class="container">
             <div class="section-title">
-                <h2>
-                    معلومات عني
-                </h2>
-                <p>
-                    بيانات مختصرة
-                </p>
+                <h2>معلومات عني</h2>
+                <p>بيانات مختصرة</p>
             </div>
             <div class="info">
                 <div class="info-box">
-                    <strong>
-                        الاسم:
-                    </strong>
-                    إبراهيم أبو شمالة
+                    <strong>الاسم:</strong> إبراهيم أبو شمالة
                 </div>
                 <div class="info-box">
-                    <strong>
-                        المجال:
-                    </strong>
-                    التكنولوجيا والبرمجة
+                    <strong>المجال:</strong> التكنولوجيا والبرمجة
                 </div>
                 <div class="info-box">
-                    <strong>
-                        اللغة:
-                    </strong>
-                    العربية
+                    <strong>اللغة:</strong> العربية
                 </div>
                 <div class="info-box">
-                    <strong>
-                        الهوايات:
-                    </strong>
-                    التصميم، التصوير،
-                    التكنولوجيا
+                    <strong>الهوايات:</strong> التصميم، التصوير، التكنولوجيا
                 </div>
             </div>
         </div>
     </section>
-    <!-- =========================
-         التواصل
-    ========================= -->
-    <section
-        class="contact"
-        id="contact"
-    >
+
+    <!-- التواصل -->
+    <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>
-                    تواصل معي
-                </h2>
-                <p>
-                    يمكنك متابعتي عبر مواقع التواصل
-                </p>
+                <h2>تواصل معي</h2>
+                <p>يمكنك متابعتي عبر مواقع التواصل</p>
             </div>
             <div class="social">
-                <!-- ضع رابط حساب Instagram مكان # -->
-                <a
-                    href="#"
-                    target="_blank"
-                >
-                    Instagram
-                </a>
-                <!-- ضع رابط حساب Facebook مكان # -->
-                <a
-                    href="#"
-                    target="_blank"
-                >
-                    Facebook
-                </a>
-                <!-- ضع رابط حساب TikTok مكان # -->
-                <a
-                    href="#"
-                    target="_blank"
-                >
-                    TikTok
-                </a>
+                <!-- إنستغرام (تمت إضافة رابطك بنجاح) -->
+                <a href="https://www.instagram.com/shammalaibrahemabu?stkn=MWVrb2N3aWZkZDI3Ng%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+                
+                <!-- فيسبوك (تمت إضافة رابطك مسبقاً) -->
+                <a href="https://www.facebook.com/share/1WATFVfPBU/?mibextid=wwXIfr" target="_blank">Facebook</a>
+                
+                <!-- تيك توك (استبدله برابطك لاحقاً إذا أردت) -->
+                <a href="#" target="_blank">TikTok</a>
             </div>
         </div>
     </section>
-    <!-- =========================
-         الفوتر
-    ========================= -->
+
+    <!-- الفوتر -->
     <footer>
-        <p>
-            ©
-            <span id="year"></span>
-            إبراهيم أبو شمالة
-            — جميع الحقوق محفوظة
-        </p>
+        <p>© <span id="year"></span> إبراهيم أبو شمالة — جميع الحقوق محفوظة</p>
     </footer>
-    <!-- =========================
-         زر الوضع الليلي
-    ========================= -->
-    <button id="themeBtn">
-        ☀️
-    </button>
-    <!-- =========================
-         JavaScript
-    ========================= -->
+
+    <!-- زر الوضع الليلي -->
+    <button id="themeBtn">☀️</button>
+
+    <!-- JavaScript -->
     <script>
         /* السنة الحالية */
-        document.getElementById("year").textContent =
-            new Date().getFullYear();
+        document.getElementById("year").textContent = new Date().getFullYear();
+
         /* زر تغيير الوضع */
-        const themeBtn =
-            document.getElementById("themeBtn");
-        themeBtn.addEventListener(
-            "click",
-            function () {
-                document.body.classList.toggle(
-                    "light"
-                );
-                if (
-                    document.body.classList.contains(
-                        "light"
-                    )
-                ) {
-                    themeBtn.textContent = "🌙";
-                }
-                else {
-                    themeBtn.textContent = "☀️";
-                }
+        const themeBtn = document.getElementById("themeBtn");
+        themeBtn.addEventListener("click", function () {
+            document.body.classList.toggle("light");
+            if (document.body.classList.contains("light")) {
+                themeBtn.textContent = "🌙";
+            } else {
+                themeBtn.textContent = "☀️";
             }
-        );
+        });
+
         /* التنقل السلس */
-        document
-            .querySelectorAll("nav a")
-            .forEach(function(link) {
-                link.addEventListener(
-                    "click",
-                    function(event) {
-                        event.preventDefault();
-                        const target =
-                            document.querySelector(
-                                this.getAttribute("href")
-                            );
-                        target.scrollIntoView({
-                            behavior: "smooth"
-                        });
-                    }
-                );
+        document.querySelectorAll("nav a").forEach(function(link) {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+                const target = document.querySelector(this.getAttribute("href"));
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
             });
+        });
     </script>
 </body>
 </html>
